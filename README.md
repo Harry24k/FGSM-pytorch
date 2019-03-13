@@ -2,19 +2,23 @@
 **A pytorch implementation of "[Explaining and harnessing adversarial examples](https://arxiv.org/abs/1412.6572)"**
 
 ## Summary
-1. The natural basis is not better than a random basis for inspecting the properties of latent vectors.
-   - there are serveral directions which have the semantic meaning not only individual units.
-2. We can generate images(_adversarial examples_) with small perturbations to fooling neural network models.
-3. Weight Decay or Regularization couldn't help model to defend adversarial examples.
-4. One adversarial example for a specific model is possible to deceive other models.
-5. According to spectral analysis of unstability, the deeper models, the more stupid.
+This code is a pytorch implementation of FGSM(Fast Gradient Sign Method).
+In this code, I used FGSM to fool [Inception v3](https://arxiv.org/abs/1512.00567).
+The picture '[Giant Panda](http://www.image-net.org/)' is exactly the same as in the paper.
+You can add other pictures with a folder with the label name in the 'data'.
 
 ## Requirements
 * python==3.6   
 * numpy==1.14.2   
 * pytorch==1.0.0   
 
-## A limitation of this code
-In the paper, L-BFGS is used to solve equation with constraints.   
-However, in this code, backpropagation method is used instead of L-BFGS.   
-Hence, it doesn't cover "4.2 Exprimental results" 
+## Important results not in the code
+- Mathmatical Results
+   - There are some important difference between adversarial training and L1 weight decay. (p.4)
+      - Adversarial training : the L1 penalty is subtracted off inside of the activation during training.
+      - L1 weight decay : the L1 penalty is subtracted off outside of the activation during training.
+- Experimental Results
+   - We can use FGSM for a regularizer but it does not defend against all adversarial attack images. (p.5)
+   - RBF networks are resistant to adversarial examples, but not for Linear. (p.7)
+      - The author claims current methodologies all resemble the linear classifier, which is why do adversarial examples generalize
+   - Alternative hypotheses(generative models with input distribution, ensembles) are not resistant to adversarial examples. (p.8)
