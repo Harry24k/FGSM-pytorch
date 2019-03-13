@@ -15,8 +15,9 @@ You can add other pictures with a folder with the label name in the 'data'.
 ## Important results not in the code
 - Mathmatical Results
    - There are some important difference between adversarial training and L1 weight decay. (p.4)
+      - On logistic regression,
       - Adversarial training : the L1 penalty is subtracted off inside of the activation during training.
-      - L1 weight decay : the L1 penalty is subtracted off outside of the activation during training.
+      - L1 weight decay : the L1 penalty is added to the training cost(=outside of the activation) during training.
 - Experimental Results
    - We can use FGSM for a regularizer but it does not defend against all adversarial attack images. (p.5)
    - RBF networks are resistant to adversarial examples, but not for Linear. (p.7)
