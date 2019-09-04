@@ -23,3 +23,7 @@ You can add other pictures with a folder with the label name in the 'data'.
    - RBF networks are resistant to adversarial examples, but not for Linear. (p.7)
       - The author claims current methodologies all resemble the linear classifier, which is why do adversarial examples generalize
    - Alternative hypotheses(generative models with input distribution, ensembles) are not resistant to adversarial examples. (p.8)
+
+## Notice
+- This Repository won't be updated.
+- Please check [the package of adversarial attacks in pytorch](https://github.com/Harry24k/adversairal-attacks-pytorch)
